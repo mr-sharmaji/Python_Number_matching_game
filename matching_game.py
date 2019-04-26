@@ -36,8 +36,13 @@ print("\nWelcome To Number Matching Game!\n")
 cc= computer_code()
 clue_result = []
 while clue_result != "CRACKED!! \n PARTY!!":
-    guess=get_guess()
-    clue_result=generate_clues(guess,cc)
-    print("Here is the result of your guess: ")
-    for clue in clue_result:
-        print(clue)
+    try:
+        guess=get_guess()
+        clue_result=generate_clues(guess,cc)
+        print("Here is the result of your guess: ")
+        for clue in clue_result:
+            print(clue)
+    except:
+        print("You Gave Up!")
+        break
+
